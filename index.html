@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Web Example</title>
+</head>
+<body>
+
+<label for="languageQuestion">What language was created to add interactivity to the Web? :</label>
+<input type="text" id="languageQuestion">
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const inputField = document.getElementById("languageQuestion");
+    let userInput = ""; // Store user input
+
+    inputField.addEventListener("input", function() {
+        userInput = inputField.value;
+    });
+
+    inputField.addEventListener("blur", function() {
+        if (userInput) {
+            alert("You said (" + userInput + "). JavaScript was created to add interactivity to the Web.");
+        }
+    });
+
+    const libraryChoice = prompt("What code library would you prefer? (Vue, React, jQuery)");
+    alert("Your preferred library: " + libraryChoice);
+});
+</script>
+
+</body>
+</html>
